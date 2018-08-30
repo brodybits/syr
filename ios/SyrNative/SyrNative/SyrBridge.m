@@ -196,7 +196,7 @@
   Class class = NSClassFromString(className);
 
   // create an instance of the object
-  if(class != nil){
+  if (class != nil) {
     [_instances setObject:class forKey:className];
   }
 
@@ -204,9 +204,9 @@
   NSString* selectorString = [NSString stringWithFormat:@"__syr_export__%@", [astDict valueForKey:@"method"]];
   SEL methodSelector = NSSelectorFromString(selectorString);
   if ([class respondsToSelector:methodSelector]) {
-
     NSMethodSignature *methodSignature = [NSClassFromString(className) methodSignatureForSelector:methodSelector];
-    //invoke render method, pass component
+
+    // invoke render method, pass component
     NSInvocation *inv = [NSInvocation invocationWithMethodSignature:methodSignature];
 
     [inv setSelector:methodSelector];
@@ -214,14 +214,15 @@
 
     NSData *argsData = [[astDict valueForKey:@"args"] dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
+
+    // @TODO needs better explanation:
     // Note that JSONObjectWithData will return either an NSDictionary or an NSArray,
     // depending whether your JSON string represents an a dictionary or an array.
     id argsObject = [NSJSONSerialization JSONObjectWithData:argsData options:0 error:&error];
-    int argsIndex = 2; // start at 2
+    int invArgumentIndex = 2; // @TODO explain why
     for(id arg in argsObject) {
       NSObject* argObj = [argsObject objectForKey:arg];
-      [inv setArgument:&(argObj) atIndex:argsIndex];
-      argsIndex = argsIndex + 1;
+      [inv setArgument:&(argObj) atIndex:invArgumentIndex++];
     }
     [inv invoke];
   }
