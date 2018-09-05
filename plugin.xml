@@ -1,0 +1,123 @@
+<plugin id="cordova-plugin-syr-core" version="0.0.1-0.1+dev">
+
+  <platform name="android">
+    <!-- THANKS: cordova-plugin-whitelist -->
+    <config-file target="config.xml" parent="/*">
+      <feature name="AQS">
+        <param name="android-package" value="io.aa.AQS" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <source-file src="android/cordova-plugin/io/aa/AQS.java" target-dir="src/android/io/aa" />
+
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/Component.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrAlertDialogue.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrAnimatedImage.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrAnimatedText.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrAnimatedView.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrAnimator.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrBaseModule.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrBridge.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrBundle.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrBundleManager.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrButton.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrComponent.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrEventHandler.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrImage.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrInstance.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrInstanceManager.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrLinearGradient.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrMethod.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrNetworking.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrRaster.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrRootView.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrScrollview.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrStackview.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrStyler.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrText.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrTouchableOpacity.java" target-dir="src/android/syr/js/org/syrnative" />
+    <source-file src="android/syrnative/src/main/java/syr/js/org/syrnative/SyrView.java" target-dir="src/android/syr/js/org/syrnative" />
+
+
+
+  </platform>
+
+  <platform name="ios">
+    <!-- THANKS: cordova-plugin-whitelist -->
+    <config-file target="config.xml" parent="/*">
+      <feature name="AQS">
+        <param name="ios-package" value="AQS" />
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+
+    <header-file src="ios/cordova-plugin/AQS.h" />
+    <source-file src="ios/cordova-plugin/AQS.m" />
+
+    <header-file src="ios/SyrNative/SyrNative/SyrAlertDialogue.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAlertDialogue.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrAnimatedImage.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAnimatedImage.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrAnimatedText.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAnimatedText.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrAnimatedView.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAnimatedView.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrAnimationDelegate.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAnimationDelegate.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrAnimator.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrAnimator.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrBridge.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrBridge.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrBundleManager.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrBundleManager.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrButton.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrButton.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrComponent.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrComponent.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrCore.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrCore.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrEventHandler.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrEventHandler.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrHapticHelper.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrHapticHelper.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrHeightWidthAnimation.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrHeightWidthAnimation.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrImage.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrImage.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrInfoBox.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrInfoBox.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrLinearGradient.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrLinearGradient.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrNative.h" />
+    <header-file src="ios/SyrNative/SyrNative/SyrNetworking.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrNetworking.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrOpacityAnimation.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrOpacityAnimation.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrRaster.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrRaster.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrRootView.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrRootView.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrRotationAnimation.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrRotationAnimation.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrScrollView.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrScrollView.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrStackView.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrStackView.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrStyler.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrStyler.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrSwitch.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrSwitch.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrText.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrText.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrTouchableOpacity.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrTouchableOpacity.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrView.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrView.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrViewHandler.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrViewHandler.m" />
+    <header-file src="ios/SyrNative/SyrNative/SyrXYAnimation.h" />
+    <source-file src="ios/SyrNative/SyrNative/SyrXYAnimation.m" />
+
+  </platform>
+</plugin>
