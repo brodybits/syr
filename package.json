@@ -1,6 +1,6 @@
 {
-  "name": "@syr/core",
-  "version": "1.5.4",
+  "name": "cordova-plugin-syr-core-experimental",
+  "version": "0.0.1-0.01+dev",
   "description": "minimal react api, that leans toward native SDK developers",
   "main": "index.js",
   "public": true,

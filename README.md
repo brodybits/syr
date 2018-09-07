@@ -1,4 +1,53 @@
-# syr js - development version
+# Native Cordova view using syr core - experimental work
+
+Experimental adaptations to syr.js core to work as a Cordova plugin for Android and iOS, with help from some extra WebView hacks
+
+using local webpack dev server for now
+
+LICENSE: MIT
+
+## Usage
+
+Note: these directions assume knowledge of Cordova framework and some familiarity with syr.js.
+
+On a Cordova project:
+
+- Add this plugin to the Cordova project
+- Update the application JavaScript to execute the following after receiving the `deviceready` event:
+
+```js
+cordova.exec(null, null, 'SYRPlugin', 'start', [])
+```
+
+Do the following steps on <https://github.com/syrjs/core> before running the app
+(from [Running the local Sample](#running-the-local-sample) section below):
+
+* Clone the repo
+* `npm install`
+* `npm run serve`
+
+Then run the app on Android emulator or iOS simulator.
+
+## Major issues
+
+* Use of extra dialog on Android breaks operation of back button
+* Images do not seem to work
+
+## Other TODO items
+
+* Export cleaner JavaScript startup API
+* Fix to use native HTML and JavaScript from assets instead of local webpack server
+* Support for using bundled JavaScript part of syr.js core within a Cordova project
+* Fix SyrBridge to work with existing Cordova WebView on Android and iOS
+* Remove extra Android and iOS artifacts not needed
+
+## For future consideration
+
+* Support for concurrent native views, possibly with multiple JavaScript execution contexts
+
+## End of Cordova plugin documentation
+
+# original documentation for syr js - development version
 
 <div align="center">
   <img src="https://github.com/syrjs/core/blob/master/logos/syr-logo.png" alt="syr" title="syr" width=128>

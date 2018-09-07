@@ -1,6 +1,12 @@
-package com.example.dereanderson.syrnativeandroid;
+package syrnativeandroid;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
+
+import android.app.Dialog;
+
+// XXX TBD ???:
+// import android.support.v7.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
@@ -31,22 +37,29 @@ import syr.js.org.syrnative.SyrTouchableOpacity;
 import syr.js.org.syrnative.SyrView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity /* extends AppCompatActivity */ {
 
+    /* ** XXX GONE:
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+    // */
 
-        RelativeLayout layout = new RelativeLayout(this);
+
+    public static void start(Activity myActivity) {
+        RelativeLayout layout = new RelativeLayout(myActivity);
         RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         layout.setLayoutParams(layoutParams);
 
+        /* ** TBD evidently not needed in Cordova plugin:
         // hide action bar aka title bar
         try
         {
             this.getSupportActionBar().hide();
         }
         catch (NullPointerException e){}
+        // */
 
         // register NativeModules
         List<SyrBaseModule> modules = new ArrayList<>();
@@ -76,7 +89,8 @@ public class MainActivity extends AppCompatActivity {
         instance.setNativeModules(modules);
 
         // create a new Rootview
-        SyrRootView rootview = new SyrRootView(this);
+        // SyrRootView rootview = new SyrRootView(this);
+        SyrRootView rootview = new SyrRootView(myActivity);
 
         JSONObject appProps = new JSONObject();
 
@@ -86,7 +100,16 @@ public class MainActivity extends AppCompatActivity {
         rootview.setLayoutParams(layoutParams);
         layout.addView(rootview);
 
-        // set the content of the to the Rootview
-        setContentView(layout);
-    }
+        // Show the content of the Rootview
+
+        // setContentView(layout);
+
+        // THANKS FOR GUIDANCE:
+        // https://stackoverflow.com/questions/6329360/how-to-set-dialog-to-show-with-full-screen/7597173#7597173
+        Dialog d = new Dialog(myActivity, android.R.style.Theme_Black_NoTitleBar_Fullscreen);
+
+        d.setContentView(layout);
+
+        d.show();
+  }
 }

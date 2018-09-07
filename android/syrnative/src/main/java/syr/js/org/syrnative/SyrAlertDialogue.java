@@ -2,7 +2,10 @@ package syr.js.org.syrnative;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.support.v7.app.AlertDialog;
+
+// XXX TBD ???:
+// import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
